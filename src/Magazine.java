@@ -1,4 +1,4 @@
-public class Magazine extends Livre{
+public class Magazine extends Livre {
     private String domaine;
     private String periodicite;
 

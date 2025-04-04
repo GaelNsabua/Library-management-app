@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -10,7 +9,7 @@ public class Utilisateur {
     protected String password;
     protected String role;
 
-    public Utilisateur(){
+    public Utilisateur() {
 
     }
 
@@ -21,7 +20,7 @@ public class Utilisateur {
         this.role = role;
     }
 
-    public void Sinscrire(){
+    public void Sinscrire() {
         Scanner read = new Scanner(System.in);
 
         System.out.print("Saisissez votre nom : ");
@@ -29,7 +28,7 @@ public class Utilisateur {
         System.out.print("Saisissez votre email : ");
         this.email = read.nextLine();
         System.out.print("Saisissez votre mot de passe : ");
-        this.password = read.nextLine() ;
+        this.password = read.nextLine();
         this.role = "Lecteur";
 
         //Implementer logique de verification pour se rassurer que l'utilisateur n'existe pas déjà
@@ -37,42 +36,44 @@ public class Utilisateur {
         System.out.println("Inscription reussie");
     }
 
-    public void SeConnecter(){
+    public void SeConnecter() {
 
         //verification nous aide à arreter la boucle si l'utilisateur est trouvé
-            boolean verification = true;
+        boolean verification = true;
 
-            //Liste qui va contenir la liste de tous les utilisateurs
-            List<Utilisateur> utilisateurs = Bibliotheque.getUtilisateurs();
+        //Liste qui va contenir la liste de tous les utilisateurs
+        List<Utilisateur> utilisateurs = Bibliotheque.getUtilisateurs();
 
-            Scanner read = new Scanner(System.in);
-            do {
-                System.out.print("Saisissez votre email : ");
-                String email = read.nextLine();
-                System.out.print("Saisissez votre mot de passe : ");
-                String password = read.nextLine() ;
+        Scanner read = new Scanner(System.in);
+        do {
+            System.out.print("Saisissez votre email : ");
+            String email = read.nextLine();
+            System.out.print("Saisissez votre mot de passe : ");
+            String password = read.nextLine();
 
-                for(Utilisateur utilisateur:utilisateurs){
-                    if (Objects.equals(utilisateur.getEmail(), email) && Objects.equals(utilisateur.getPassword(), password)){
-                        System.out.println(utilisateur.getNom() + " est connecté");
-                        if (Objects.equals(utilisateur.role, "lecteur")){
-                            InterfaceUtlisateur.menuLecteur(new Lecteur(utilisateur));
-                        } else if (Objects.equals(utilisateur.role, "bibliothecaire"){
-                            InterfaceUtlisateur.menuBibliothecaire(new Bibliothecaire());
-                        }
-                        verification = false;
-                        break;
-                    } else if (Objects.equals(utilisateur.getEmail(), email) && !Objects.equals(utilisateur.getPassword(), password)) {
-                        System.out.println("Mot de passe incorrecte");
-                        break;
-                    } else {
-                        System.out.println("Utilisateur inconnu");
+            for (Utilisateur utilisateur : utilisateurs) {
+                if (Objects.equals(utilisateur.getEmail(), email) && Objects.equals(utilisateur.getPassword(), password)) {
+                    System.out.println(utilisateur.getNom() + " est connecté");
+                    if (Objects.equals(utilisateur.role, "lecteur")) {
+                        InterfaceUtlisateur.menuLecteur((Lecteur) utilisateur);
+                    } else if (Objects.equals(utilisateur.role, "bibliothecaire")) {
+                        InterfaceUtlisateur.menuBibliothecaire((Bibliothecaire) utilisateur);
+                    } else if (Objects.equals(utilisateur.role, "administrateur")) {
+                        InterfaceUtlisateur.menuAdmin((Administrateur) utilisateur);
                     }
+                    verification = false;
+                    break;
+                } else if (Objects.equals(utilisateur.getEmail(), email) && !Objects.equals(utilisateur.getPassword(), password)) {
+                    System.out.println("Mot de passe incorrecte");
+                    break;
+                } else {
+                    System.out.println("Utilisateur inconnu");
                 }
-            } while (verification);
+            }
+        } while (verification);
     }
 
-    public Livre rechercherLivre(){
+    public Livre rechercherLivre() {
 
         List<Livre> livres = Bibliotheque.getLivres();
         Scanner read = new Scanner(System.in);
@@ -82,8 +83,8 @@ public class Utilisateur {
         System.out.print("Rechercher ....  ");
         String critere = read.nextLine();
 
-        for(Livre livre:livres){
-            if (Objects.equals(livre.titre, critere) || Objects.equals(livre.auteur, critere) || Objects.equals(livre.anneePublication, critere) || Objects.equals(livre.ISBN, critere) ){
+        for (Livre livre : livres) {
+            if (Objects.equals(livre.titre, critere) || Objects.equals(livre.auteur, critere) || Objects.equals(livre.anneePublication, critere) || Objects.equals(livre.ISBN, critere)) {
                 livre.getDetails();
                 System.out.println("=========================");
                 return livre;
@@ -94,7 +95,7 @@ public class Utilisateur {
         return null;
     }
 
-    public void getDetails(){
+    public void getDetails() {
         System.out.println("Nom : " + this.nom + "\nEmail : " + this.email + "\nRole : " + this.role);
     }
 

@@ -1,9 +1,9 @@
 import java.util.List;
 
 public class Categorie {
-    private String nom;
-    private String description;
-    private List<Livre> livres;
+    private final String nom;
+    private final String description;
+    private final List<Livre> livres;
 
     public Categorie(String nom, String description, List<Livre> livres) {
         this.nom = nom;
@@ -11,8 +11,8 @@ public class Categorie {
         this.livres = livres;
     }
 
-    public void getLivres(){
-        for (Livre livre: livres){
+    public void getLivres() {
+        for (Livre livre : livres) {
             livre.getDetails();
         }
     }

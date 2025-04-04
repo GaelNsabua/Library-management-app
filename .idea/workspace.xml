@@ -5,32 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a3ca3f1-b694-41ff-b4ae-c7bfc577790a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClassDiagram1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GESTION BIBLIOTHEQUE.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GESTION BIBLIOTHEQUE.mdj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UseCaseDiagram1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WhatsApp Image 2025-04-03 at 23.25.05_e37972b6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/activityDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classDiagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Administrateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Bibliothecaire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Bibliotheque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Biographie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Categorie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Emprunt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lecteur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Livre.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Magazine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Roman.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utilisateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/useCaseDiagram.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Administrateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bibliothecaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bibliothecaire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bibliotheque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bibliotheque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Categorie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Emprunt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Emprunt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InterfaceUtlisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterfaceUtlisateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lecteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lecteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Magazine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Magazine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utilisateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilisateur.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +32,34 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1743801665" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1743801664" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -56,15 +69,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="GESTION BIBLIOTHEQUE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -75,5 +102,16 @@
       <updated>1743767809184</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

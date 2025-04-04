@@ -2,9 +2,33 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Bibliothecaire extends Utilisateur{
+public class Bibliothecaire extends Utilisateur {
 
-    public void ajouterLivre(){
+    public static boolean validerEmprunt(Lecteur lecteur, Livre livre) {
+        System.out.println("Valider Emprunt");
+        System.out.println("===============");
+        System.out.println("Valider l'emprunt du livre " + livre.titre + " de " + livre.auteur + " pour le lecteur " + lecteur.nom);
+        System.out.println("1. Oui");
+        System.out.println("2. Non");
+
+        System.out.println("\nChoisissez une option : ");
+        Scanner read = new Scanner(System.in);
+        int choix = read.nextInt();
+
+        switch (choix) {
+            case 1:
+                livre.disponible = false;
+                Emprunt.enregistrerEmprunt(livre, lecteur);
+                return true;
+            case 2:
+                return false;
+            default:
+                System.out.println("Choix indisponible");
+        }
+        return false;
+    }
+
+    public void ajouterLivre() {
 
         Scanner read = new Scanner(System.in);
 
@@ -21,9 +45,10 @@ public class Bibliothecaire extends Utilisateur{
 
         Bibliotheque.ajouterLivre(new Livre(titre, auteur, anneePublication, ISBN, true));
 
+        System.out.println("Livre ajoute avec succes");
     }
 
-    public void modifierLivre(){
+    public void modifierLivre() {
 
         boolean success = true;
 
@@ -34,24 +59,24 @@ public class Bibliothecaire extends Utilisateur{
         Livre livre = rechercherLivre();
 
         //Verifie si le livre a été trouvé
-        if (livre != null){
+        if (livre != null) {
             System.out.println("Choix diponible pour le livre " + livre.titre);
             System.out.println("=============================================");
             System.out.println("1. Modifier le titre");
             System.out.println("2. Modifier l'auteur");
-            System.out.println("3. Modifier l\'annee de publication");
+            System.out.println("3. Modifier l'annee de publication");
             System.out.println("4. Modifier l'ISBN");
 
             System.out.println("\nChoisissez une option : ");
             Scanner read = new Scanner(System.in);
             int choix = read.nextInt();
 
-            switch (choix){
-                case 1 :
+            switch (choix) {
+                case 1:
                     System.out.print("Titre : ");
                     livre.titre = read.nextLine();
                     break;
-                case 2 :
+                case 2:
                     System.out.print("Auteur : ");
                     livre.auteur = read.nextLine();
                     break;
@@ -59,7 +84,7 @@ public class Bibliothecaire extends Utilisateur{
                     System.out.print("Annee publication : ");
                     livre.anneePublication = read.nextLine();
                     break;
-                case 4 :
+                case 4:
                     System.out.print("ISBN : ");
                     livre.ISBN = read.nextLine();
                     break;
@@ -68,57 +93,35 @@ public class Bibliothecaire extends Utilisateur{
                     success = false;
             }
 
-            if (success){
+            if (success) {
                 System.out.println("Livre modifié avec success");
             }
         }
     }
 
-    public void supprimerLivre(){
+    public void supprimerLivre() {
         System.out.println("Supprimer un livre");
         System.out.println("=================");
         System.out.println("Commencez par rechercher le livre à supprimer");
         Livre livre = rechercherLivre();
         Bibliotheque.supprimerLivre(livre);
+
+        System.out.println("Livre supprime avec succes !");
     }
 
-    public void verifierDisponibilite(){
+    public void verifierDisponibilite() {
         System.out.println("Verifier disponibilité un livre");
         System.out.println("===============================");
         Livre livre = rechercherLivre();
 
-        if (livre != null && livre.disponible){
+        if (livre != null && livre.disponible) {
             System.out.println("Le livre " + livre.titre + " est disponible");
         } else {
             System.out.println("Le livre " + livre.titre + " est indisponible");
         }
     }
 
-    public static boolean validerEmprunt(Lecteur lecteur, Livre livre){
-        System.out.println("Valider Emprunt");
-        System.out.println("===============");
-        System.out.println("Valider l'emprunt du livre " + livre.titre + " de " + livre.auteur + " pour le lecteur " + lecteur.nom);
-        System.out.println("1. Oui");
-        System.out.println("2. Non");
-
-        System.out.println("\nChoisissez une option : ");
-        Scanner read = new Scanner(System.in);
-        int choix = read.nextInt();
-
-        switch (choix){
-            case 1 :
-                livre.disponible = false;
-                Emprunt.enregistrerEmprunt(livre, lecteur);
-                return true;
-            case 2 :
-                return false;
-            default:
-                System.out.println("Choix indisponible");
-        }
-        return false;
-    }
-
-    public void enregistrerRetourLivre(){
+    public void enregistrerRetourLivre() {
 
         System.out.println("Enregistrer retour d'un livre");
         System.out.println("=============================");
@@ -136,11 +139,11 @@ public class Bibliothecaire extends Utilisateur{
 
         List<Emprunt> emprunts = Bibliotheque.getEmprunts();
 
-        switch (choix){
-            case 1 :
-                if (livre != null && livre.isDisponible()){
-                    for (Emprunt emprunt:emprunts){
-                        if (Objects.equals(emprunt.getLivre(), livre) && Objects.equals(emprunt.isRetourne(), false)){
+        switch (choix) {
+            case 1:
+                if (livre != null && livre.isDisponible()) {
+                    for (Emprunt emprunt : emprunts) {
+                        if (Objects.equals(emprunt.getLivre(), livre) && Objects.equals(emprunt.isRetourne(), false)) {
                             emprunt.setRetourne(true);
                             livre.disponible = true;
                             System.out.println("Retour enregistre avec succes !");
@@ -149,7 +152,7 @@ public class Bibliothecaire extends Utilisateur{
                         }
                     }
                 }
-            case 2 :
+            case 2:
                 InterfaceUtlisateur.menuBibliothecaire(this);
             default:
                 System.out.println("Choix indisponible");

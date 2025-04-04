@@ -3,10 +3,6 @@ import java.util.Objects;
 
 public class Lecteur extends Utilisateur {
 
-    public Lecteur(Utilisateur utilisateur){
-        new Utilisateur(utilisateur.nom, utilisateur.email, utilisateur.password, utilisateur.role);
-    }
-
     public void emprunterLivre() {
 
         System.out.println("Emprunter un livre");
@@ -27,8 +23,8 @@ public class Lecteur extends Utilisateur {
 
     public void consulterHistoriqueEmprunt() {
         List<Emprunt> emprunts = Bibliotheque.getEmprunts();
-        for (Emprunt emprunt:emprunts){
-            if (Objects.equals(emprunt.getLecteur(), this)){
+        for (Emprunt emprunt : emprunts) {
+            if (Objects.equals(emprunt.getLecteur(), this)) {
                 emprunt.getDetails();
             } else {
                 System.out.println("Aucun emprunt relatif a vous");

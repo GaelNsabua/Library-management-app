@@ -1,14 +1,12 @@
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.List;
 
 public class Emprunt {
 
-    private LocalDate dateEmprunt;
-    private LocalDate dateRetourPrevu;
+    private final LocalDate dateEmprunt;
+    private final LocalDate dateRetourPrevu;
     private boolean retourne;
-    private Livre livre;
-    private Lecteur lecteur;
+    private final Livre livre;
+    private final Lecteur lecteur;
 
     public Emprunt(Livre livre, Lecteur lecteur) {
         this.livre = livre;
@@ -18,11 +16,11 @@ public class Emprunt {
         this.retourne = false;
     }
 
-    public static void enregistrerEmprunt(Livre livre, Lecteur lecteur){
+    public static void enregistrerEmprunt(Livre livre, Lecteur lecteur) {
         Bibliotheque.ajouterEmprunts(new Emprunt(livre, lecteur));
     }
 
-    public void getDetails(){
+    public void getDetails() {
         String status = retourne ? "Retourne" : "En cours";
         System.out.println("Livre : " + this.livre.titre + "\nDate emprunt : " + this.dateEmprunt + "\nDate retour : " + this.dateRetourPrevu + "\nStatus : " + status);
     }
