@@ -1,0 +1,78 @@
+@startuml
+
+class Livre {
+    - String titre
+    - String auteur
+    - int anneePublication
+    - String ISBN
+    - boolean disponibilite
+    + getDetails()
+}
+
+class Categorie {
+    - String nom
+    - String description
+    + getLivres()
+}
+
+class Roman {
+    - String styleLitteraire
+    - String epoque
+}
+
+class ScienceFiction {
+    - String univers
+    - String technologie
+}
+
+class Biographie {
+    - String personnaliteConcernee
+    - String periode
+}
+
+class Utilisateur {
+    - String nom
+    - String email
+    - String motDePasse
+    - String role
+    + sInscrire()
+    + seConnecter()
+}
+
+class Lecteur {
+    + emprunterLivre()
+    + retournerLivre()
+    + consulterHistorique()
+}
+
+class Bibliothecaire {
+    + ajouterLivre()
+    + modifierLivre()
+    + supprimerLivre()
+    + verifierDisponibilite()
+}
+
+class Administrateur {
+    + gererUtilisateurs()
+    + genererRapports()
+}
+
+class Emprunt {
+    - Date dateEmprunt
+    - Date dateRetourPrevu
+    - boolean retourne
+    + enregistrerEmprunt()
+    + enregistrerRetour()
+}
+
+Livre <|-- Roman
+Livre <|-- ScienceFiction
+Livre <|-- Biographie
+Livre "1" -- "*" Categorie : appartient à
+Utilisateur <|-- Lecteur
+Utilisateur <|-- Bibliothecaire
+Utilisateur <|-- Administrateur
+Lecteur "1" -- "*" Emprunt : effectue
+Livre "1" -- "*" Emprunt : concerne
+
+@enduml

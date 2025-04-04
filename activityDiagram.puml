@@ -1,0 +1,37 @@
+@startuml
+|Lecteur|
+start
+:Se connecter;
+:Rechercher un livre;
+if (Livre trouvé?) then (Oui)
+    :Afficher les détails du livre;
+    if (Livre disponible?) then (Oui)
+        :Demander l'emprunt;
+        |Système|
+        :Vérifier le statut de l'utilisateur;
+        if (Utilisateur autorisé?) then (Oui)
+            :Enregistrer l'emprunt;
+            :Calculer la date de retour;
+            |Bibliothécaire|
+            :Valider l'emprunt;
+            |Système|
+            :Mettre à jour la disponibilité du livre;
+            |Lecteur|
+            :Recevoir confirmation d'emprunt;
+        else (Non)
+            |Lecteur|
+            :Erreur (Utilisateur non autorisé);
+        endif
+    else (Non)
+        :Livre indisponible;
+        :Proposer une réservation;
+        |Système|
+        :Enregistrer la réservation;
+        |Lecteur|
+        :Recevoir confirmation de réservation;
+    endif
+else (Non)
+    :Erreur (Livre introuvable);
+endif
+stop
+@enduml

@@ -1,0 +1,60 @@
+@startuml
+
+actor Lecteur
+actor Bibliothecaire
+actor Administrateur
+
+rectangle "Système Bibliothèque" {
+    usecase "S'inscrire" as UC1
+    usecase "Se connecter" as UC2
+    usecase "Rechercher un livre" as UC3
+    usecase "Consulter un livre" as UC4
+    usecase "Emprunter un livre" as UC5
+    usecase "Retourner un livre" as UC6
+    usecase "Consulter l'historique des emprunts" as UC7
+    usecase "Réserver un livre" as UC8
+    usecase "Ajouter un livre" as UC9
+    usecase "Modifier un livre" as UC10
+    usecase "Supprimer un livre" as UC11
+    usecase "Vérifier la disponibilité d'un livre" as UC12
+    usecase "Gérer les emprunts" as UC13
+    usecase "Envoyer des rappels de retour" as UC14
+    usecase "Gérer les utilisateurs" as UC15
+    usecase "Générer des rapports d'utilisation" as UC16
+
+    UC5 .> UC12 : <<include>>
+    UC8 .> UC12 : <<include>>
+    UC6 .> UC7 : <<include>>
+    UC13 .> UC5 : <<include>>
+    UC13 .> UC6 : <<include>>
+    UC14 .> UC13 : <<include>>
+    UC15 .> UC1 : <<include>>
+    UC15 .> UC2 : <<include>>
+    UC10 .> UC9 : <<include>>
+    UC11 .> UC9 : <<include>>
+
+    UC4 <|-- UC3 : <<extend>>
+    UC7 <|-- UC5 : <<extend>>
+    UC7 <|-- UC6 : <<extend>>
+}
+
+Lecteur -- UC1
+Lecteur -- UC2
+Lecteur -- UC3
+Lecteur -- UC4
+Lecteur -- UC5
+Lecteur -- UC6
+Lecteur -- UC7
+Lecteur -- UC8
+
+Bibliothecaire -- UC9
+Bibliothecaire -- UC10
+Bibliothecaire -- UC11
+Bibliothecaire -- UC12
+Bibliothecaire -- UC13
+Bibliothecaire -- UC14
+
+Administrateur -- UC15
+Administrateur -- UC16
+
+@enduml
