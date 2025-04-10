@@ -1,0 +1,20 @@
+[
+  {
+    "dateEmprunt": "2025-04-10",
+    "dateRetourPrevu": "2025-04-24",
+    "retourne": false,
+    "livre": {
+      "titre": "LE BON",
+      "auteur": "BEN",
+      "anneePublication": "2005",
+      "ISBN": "123-345",
+      "disponible": false
+    },
+    "lecteur": {
+      "nom": "kalala",
+      "email": "bk@esisalama.org",
+      "password": "1234",
+      "role": "lecteur"
+    }
+  }
+]

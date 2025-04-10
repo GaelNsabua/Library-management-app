@@ -1,0 +1,16 @@
+[
+  {
+    "titre": "LA",
+    "auteur": "AZE",
+    "anneePublication": "2004",
+    "ISBN": "123",
+    "disponible": true
+  },
+  {
+    "titre": "LE BON",
+    "auteur": "BEN",
+    "anneePublication": "2005",
+    "ISBN": "123-345",
+    "disponible": true
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "nom": "Paul",
+    "email": "paul@gmail.com",
+    "password": "1234",
+    "role": "administrateur"
+  },
+  {
+    "nom": "kalala",
+    "email": "bk@esisalama.org",
+    "password": "1234",
+    "role": "lecteur"
+  },
+  {
+    "nom": "Andre",
+    "email": "andre@gmail.com",
+    "password": "1234",
+    "role": "lecteur"
+  }
+]
